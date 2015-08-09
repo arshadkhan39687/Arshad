@@ -1,0 +1,65 @@
+{% load staticfiles %}
+<html>
+	<head>
+	<title></title>
+	<link href="{% static '/static/sport/css/page.css' %}" type="text/css" rel="stylesheet"/>
+	</head>
+	<body background=blue>
+	<h1><center><text-align=top> Pulsar World </center></h1>
+	<h3><center>"Four wheels move the Body Two wheels move the soul"</center></h3>
+	<table cellspacing="10" cellpadding="10">
+	<tr>
+		<div id="div1">
+			<th>
+				{% if bikes_list %}
+					{% for b in bikes_list %}
+						<a href="/pulsar/{{b.bike_name}}/">{{b.bike_name}}</a><br/>
+						<img src="/static/sport/images/{{b.bike_name}}.jpg" alt = " cant display" height="75" width="100"/><br/>
+					{% endfor %}
+				{% else %}
+					<p>NO bikes</p>
+				{% endif %}
+			</th>
+		
+		
+			<td>
+				{% block content %}
+				{% if bikes_list %}
+					{% for b in bikes_list %}
+						<h3>{{b.bike_name}}</h3>
+						<p>{{b.bike_desc}}</p><br/>
+					{% endfor %}
+					{% else %}
+					<p>NO bikes</p>
+				{% endif %}
+				<br/><br/>
+				{% endblock %}
+			</td>
+		</div>
+	</tr>
+    </table>
+	<h4><center>---------------      what next.........?        ---------------</center></h4>
+	<table>
+				<tr>
+					<th>
+						{% for n in next_list %}
+						<td>
+							<img src="/static/sport/images/{{n.bike_name}}.jpg" alt = " cant display" height="100" width="340"/>
+						</td>
+						{% endfor %}
+					</th>
+				</tr>
+				<tr>
+				<th>
+					{% for n in next_list %}
+					<td>
+						<a href="">{{n.bike_name}}</a>
+					</td>
+					{% endfor %}
+					</th>
+				</tr>
+	</table>
+		
+	
+	</body>
+</html>

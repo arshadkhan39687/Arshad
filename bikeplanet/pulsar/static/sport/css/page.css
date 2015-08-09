@@ -1,0 +1,32 @@
+*
+{
+	font-family:'comic sans ms';
+	margin:0px;
+	padding:0px;
+}
+body
+{
+	background-color:grey;
+	background-size: cover;
+}
+
+
+# div3
+{
+	width:968px;
+	
+}
+# div3 h1
+{
+	text-align:right;
+}
+
+# div1
+{
+	width:968px;
+	cell-padding:2px;
+	cell-spacing:2px;
+	color:white;
+	text-transform:uppercase;
+}
+

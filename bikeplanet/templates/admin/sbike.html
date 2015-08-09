@@ -1,0 +1,12 @@
+{% extends 'admin/arshad.html' %}
+	{% block content %}
+		{% if bikes_obj %}
+			<div id="div3">
+				<img src="/static/sport/images/{{bikes_obj.bike_name}}.jpg" alt = " cant display" height="320" width="900"/>
+				<h4><u>Name:</u>{{bikes_obj.bike_name}}<br/><u>Launch Year:</u>{{bikes_obj.launch_date}}<br/><u>Bike Description:</u>{{bikes_obj.bike_desc}}<br/><u>Review:</u>{{bikes_obj.review}}</h4>
+			</div>
+		{% else %}
+			<p>NO bikes</p>
+		{% endif %}
+	{% endblock %}
+				
